@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Impede rolagem */
+    background-color: #000011; /* Cor de fundo do espaço */
+    position: relative; /* Para as estrelas ficarem dentro do body */
+    height: 100vh;
+    width: 100vw;
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: -1; /* As estrelas devem ficar atrás de tudo */
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%; /* Tornando as estrelas circulares */
+    opacity: 0.8; /* Brilho suave */
+    animation: twinkle 2s infinite; /* Animação de cintilação */
+}
+
+/* Animação de cintilação */
+@keyframes twinkle 
+{
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.telaFlutuante {
+    margin: 20px auto; /* Centraliza a tela com margens automáticas */
+    width: 80%; /* Largura ajustável para a tela */
+    max-width: 800px; /* Largura máxima */
+    background: #020216; /* Cor do fundo da tela flutuante */
+    border-radius: 15px;
+    padding: 20px;
+    color: white; /* Cor do texto */
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.5); /* Sombra da tela */
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Garante que a tela flutuante esteja à frente das estrelas */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse os limites da tela */
+}
+
+/* Media query para dispositivos mobile */
+@media (max-width: 768px) {
+    .telaFlutuante {
+        width: 85%; /* 90% da largura da tela em dispositivos móveis */
+        max-width: 400px; /* Limite de 500px */
+    }
+}
+
+/* Media query para telas maiores (desktop) */
+@media (min-width: 769px) {
+    .telaFlutuante {
+        width: 60%; /* 60% da largura da tela em desktops */
+        max-width: 900px; /* Limite máximo de 900px */
+    }
+}
