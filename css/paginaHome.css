@@ -66,3 +66,34 @@ html, body {
         max-width: 900px; /* Limite máximo */
     }
 }
+
+
+/* Estilo da div principal (mensagem) */
+.mensagem {
+    margin-bottom: 50px; /* Garante espaçamento entre a mensagem e o vídeo */
+}
+
+/* Estilo da div de vídeo */
+.video-homenagem {
+    width: 100%; /* Ocupa a largura total da tela */
+    text-align: center; /* Centraliza o conteúdo da div */
+    padding: 20px;
+    margin-top: 20px; /* Adiciona espaçamento entre as divs */
+    color: #fff;
+}
+
+/* Estilo do título na div de vídeo */
+.video-homenagem h2 {
+    font-size: 24px;
+    margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+/* Estilo do vídeo */
+.video-homenagem video {
+    width: 60%; /* Define o tamanho do vídeo (60% da largura da tela) */
+    max-width: 600px; /* Limita o tamanho máximo do vídeo */
+    height: auto; /* Mantém a proporção do vídeo */
+    border: 2px solid #fff; /* Adiciona uma borda branca */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra leve ao redor do vídeo */
+}
