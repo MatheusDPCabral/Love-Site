@@ -3,14 +3,22 @@ html, body {
   padding: 0;
   overflow: hidden;
   background-color: #000011;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh; /* Garante a altura completa da viewport */
+  width: 100%;
+}
 
 .star {
   position: absolute;
@@ -22,134 +30,127 @@ html, body {
 
 @keyframes twinkle {
   0%, 100% {
-      opacity: 0.8;
+    opacity: 0.8;
   }
   50% {
-      opacity: 0.5;
+    opacity: 0.5;
   }
-}
-
-.wrap {
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
 }
 
 .button {
-min-width: 300px;
-min-height: 60px;
-display: inline-flex;
-font-family: 'Nunito', sans-serif;
-font-size: 22px;
-align-items: center;
-justify-content: center;
-text-transform: uppercase;
-text-align: center;
-letter-spacing: 1.3px;
-font-weight: 700;
-color: rgb(172, 51, 51);
-background: linear-gradient(90deg, rgba(98, 0, 234, 1) 0%, rgba(136, 53, 255, 1) 100%);
-border: none;
-border-radius: 1000px;
-box-shadow: 12px 12px 24px rgba(98, 0, 234, 0.64);
-transition: all 0.3s ease-in-out 0s;
-cursor: pointer;
-outline: none;
-position: relative;
-padding: 10px;
-z-index: 1;
+  min-width: 300px;
+  min-height: 60px;
+  display: inline-flex;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: rgb(172, 51, 51);
+  background: linear-gradient(90deg, rgba(98, 0, 234, 1) 0%, rgba(136, 53, 255, 1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(98, 0, 234, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  z-index: 1;
 }
 
 .button::before {
-content: '';
-border-radius: 1000px;
-min-width: calc(300px + 12px);
-min-height: calc(60px + 12px);
-border: 6px solid #8A5BFF;
-box-shadow: 0 0 60px rgba(136, 53, 255, 0.64);
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-opacity: 0;
-transition: all .3s ease-in-out 0s;
+  content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #8A5BFF;
+  box-shadow: 0 0 60px rgba(136, 53, 255, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
 }
 
 .button::after {
-content: '';
-width: 30px;
-height: 30px;
-border-radius: 50%;
-border: 6px solid #8A5BFF;
-position: absolute;
-z-index: -1;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-animation: heartWave 1.5s infinite;
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 6px solid #8A5BFF;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: heartWave 1.5s infinite;
 }
 
 @keyframes heartWave {
-0% {
-  width: 70px;
-  height: 60px;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-100% {
-  width: 500px;
-  height: 500px;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(1) rotate(45deg);
-}
+  0% {
+    width: 70px;
+    height: 60px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1) rotate(45deg);
+  }
 }
 
 .button:hover, 
 .button:focus {
-color: #8A5BFF;
-transform: translateY(-6px);
+  color: #8A5BFF;
+  transform: translateY(-6px);
 }
 
 .button::before {
-opacity: 1;
+  opacity: 1;
 }
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
-.button {
-  min-width: 200px;
-  min-height: 50px;
-  font-size: 18px;
-  padding: 8px;
-}
+  .button {
+    min-width: 200px;
+    min-height: 50px;
+    font-size: 18px;
+    padding: 8px;
+  }
 
-.button::before {
-  min-width: calc(200px + 12px);
-  min-height: calc(50px + 12px);
-}
+  .button::before {
+    min-width: calc(200px + 12px);
+    min-height: calc(50px + 12px);
+  }
 
-.button::after {
-  width: 20px;
-  height: 20px;
-}
+  .button::after {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: 480px) {
-.button {
-  min-width: 180px;
-  min-height: 40px;
-  font-size: 16px;
-  padding: 6px;
-}
+  .button {
+    min-width: 180px;
+    min-height: 40px;
+    font-size: 16px;
+    padding: 6px;
+  }
 
-.button::before {
-  min-width: calc(180px + 12px);
-  min-height: calc(40px + 12px);
-}
+  .button::before {
+    min-width: calc(180px + 12px);
+    min-height: calc(40px + 12px);
+  }
 
-.button::after {
-  width: 15px;
-  height: 15px;
-}
+  .button::after {
+    width: 15px;
+    height: 15px;
+  }
 }

@@ -1,15 +1,15 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Impede rolagem */
     background-color: #000011; /* Cor de fundo do espaço */
-    position: relative; /* Para as estrelas ficarem dentro do body */
-    height: 100vh;
-    width: 100vw;
+    height: 100%; /* Permite que o conteúdo cresça */
+    width: 100%;
     display: flex; /* Ativa o Flexbox */
     justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    align-items: flex-start; /* Centraliza a div no topo inicialmente */
+    position: relative;
     z-index: -1; /* As estrelas devem ficar atrás de tudo */
+    overflow-x: hidden; /* Impede rolagem lateral, mas mantém vertical */
 }
 
 .star {
@@ -21,8 +21,7 @@ html, body {
 }
 
 /* Animação de cintilação */
-@keyframes twinkle 
-{
+@keyframes twinkle {
     0%, 100% {
         opacity: 0.8;
     }
@@ -32,32 +31,38 @@ html, body {
 }
 
 .telaFlutuante {
-    margin: 20px auto; /* Centraliza a tela com margens automáticas */
     width: 80%; /* Largura ajustável para a tela */
     max-width: 800px; /* Largura máxima */
     background: #020216; /* Cor do fundo da tela flutuante */
-    border-radius: 15px;
+    border-radius: 15px; /* Bordas arredondadas */
     padding: 20px;
     color: white; /* Cor do texto */
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.5); /* Sombra da tela */
     text-align: center;
     position: relative;
-    z-index: 1; /* Garante que a tela flutuante esteja à frente das estrelas */
-    overflow: hidden; /* Evita que o conteúdo ultrapasse os limites da tela */
+    z-index: 1; /* Mantém a tela à frente das estrelas */
+    overflow: hidden; /* Evita conteúdo excedente */
+    display: flex; /* Para alinhar conteúdo interno */
+    flex-direction: column; /* Organiza os filhos verticalmente */
+    align-items: center; /* Alinha horizontalmente */
+    justify-content: center; /* Alinha verticalmente */
+    min-height: 300px; /* Altura mínima */
+    margin-top: 50px; /* Espaçamento inicial em relação ao topo */
 }
 
-/* Media query para dispositivos mobile */
+/* Responsividade para dispositivos mobile */
 @media (max-width: 768px) {
     .telaFlutuante {
-        width: 85%; /* 90% da largura da tela em dispositivos móveis */
-        max-width: 400px; /* Limite de 500px */
+        width: 85%; /* Ajusta largura em dispositivos menores */
+        max-width: 400px; /* Limite de largura */
+        padding: 15px;
     }
 }
 
-/* Media query para telas maiores (desktop) */
+/* Ajuste para telas maiores (desktop) */
 @media (min-width: 769px) {
     .telaFlutuante {
-        width: 60%; /* 60% da largura da tela em desktops */
-        max-width: 900px; /* Limite máximo de 900px */
+        width: 60%; /* Reduz a largura em telas grandes */
+        max-width: 900px; /* Limite máximo */
     }
 }
