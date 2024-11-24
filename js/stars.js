@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Define o número de estrelas com base no tamanho da tela
-    const numStars = window.innerWidth <= 768 ? 150 : 1000; // Menos estrelas em dispositivos móveis
+    const numStars = window.innerWidth <= 768 ? 250 : 1000; // Menos estrelas em dispositivos móveis
 
     const body = document.body;
 
